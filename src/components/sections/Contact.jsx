@@ -106,7 +106,7 @@ function Contact() {
             LinkedIn
           </a>
           <a
-            href="https://github.com/GPSingh476/"
+            href="https://github.com/gauravpsingh07"
             target="_blank"
             rel="noreferrer"
             className="underline underline-offset-4 text-slate-300 hover:text-indigo-300"
