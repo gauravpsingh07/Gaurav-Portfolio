@@ -80,7 +80,7 @@ function _LegacyProjects() {
   );
 }
 
-function Projects() {
+function _PreviousStyledProjects() {
   const projects = [
     {
       title: "FormFlow",
@@ -194,6 +194,150 @@ function Projects() {
             )}
           </div>
         ))}
+      </div>
+    </section>
+  );
+}
+
+function Projects() {
+  const projects = [
+    {
+      title: "FormFlow",
+      featured: true,
+      description:
+        "A full-stack form builder with JWT authentication, role-based access control, dynamic form creation, PostgreSQL + Prisma persistence, Redis caching, and rate limiting. Built with React and NestJS, then containerized for local Kubernetes deployment and API testing workflows.",
+      tech: [
+        "React",
+        "NestJS",
+        "PostgreSQL",
+        "Prisma",
+        "Redis",
+        "Docker",
+        "Kubernetes",
+      ],
+      links: [
+        {
+          label: "Frontend Repo",
+          href: "https://github.com/gauravpsingh07/formflow-frontend",
+        },
+        {
+          label: "Backend Repo",
+          href: "https://github.com/gauravpsingh07/formflow-backend",
+        },
+      ],
+    },
+    {
+      title: "Stock Market Tracker",
+      description:
+        "A real-time stock market tracking app that fetches live stock prices using public APIs. Includes clean UI, instant search, price updates, and responsive design. Built with React and deployed on Vercel.",
+      tech: ["React", "API Integration", "Tailwind CSS", "Vite"],
+      links: [
+        {
+          label: "Live Demo",
+          href: "https://stock-market-tracker-wheat.vercel.app/",
+        },
+      ],
+    },
+    {
+      title: "Anime & Manga Search App",
+      description:
+        "A React-based web application that lets users search for anime and manga using a public API. Includes real-time search, score filtering, and a clean, responsive UI. Deployed on Vercel.",
+      tech: ["React", "API Integration", "Tailwind CSS", "Vite"],
+      links: [
+        {
+          label: "Live Demo",
+          href: "https://anime-manga-search.vercel.app/",
+        },
+      ],
+    },
+    {
+      title: "Personal Portfolio Website",
+      description:
+        "This portfolio itself, built as a single-page React application with Tailwind CSS, EmailJS contact integration, and Vite for fast development and deployment.",
+      tech: ["React", "Vite", "Tailwind CSS", "EmailJS"],
+      links: [],
+    },
+  ];
+
+  return (
+    <section
+      id="projects"
+      className="rounded-[2rem] border border-white/70 bg-white/72 p-6 shadow-[var(--shadow)] backdrop-blur-xl"
+    >
+      <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-[#a84b32]">
+        Projects
+      </p>
+      <h2 className="text-3xl font-semibold">Featured Work</h2>
+      <p className="mt-2 max-w-3xl text-sm leading-6 text-stone-600">
+        A mix of product-focused builds, backend-heavy systems, and polished
+        frontend work that shows how I approach both engineering and user
+        experience.
+      </p>
+
+      <div className="mt-8 grid gap-6 md:grid-cols-2">
+        {projects.map((project) => {
+          const cardClass = project.featured
+            ? "border-[#173743] bg-[#173743] text-[#fdf4ea]"
+            : "border-[#eadbcc] bg-white/82 text-stone-900";
+          const descriptionClass = project.featured
+            ? "text-[#d7e7e4]"
+            : "text-stone-600";
+          const tagClass = project.featured
+            ? "border border-white/10 bg-white/10 text-[#fdf4ea]"
+            : "bg-[#fff7ef] text-stone-700";
+          const linkClass = project.featured
+            ? "bg-[#f2c078] text-[#173743] hover:bg-[#f0b75e]"
+            : "bg-[#cd6a4d] text-white hover:bg-[#b8573c]";
+
+          return (
+            <article
+              key={project.title}
+              className={`rounded-[2rem] border p-6 shadow-[0_20px_50px_rgba(110,80,61,0.12)] ${cardClass}`}
+            >
+              <div>
+                <p
+                  className={`text-[10px] font-semibold uppercase tracking-[0.28em] ${
+                    project.featured ? "text-[#f2c078]" : "text-[#a84b32]"
+                  }`}
+                >
+                  {project.featured ? "Highlighted Build" : "Project"}
+                </p>
+                <h3 className="mt-3 text-2xl font-semibold">{project.title}</h3>
+              </div>
+
+              <p className={`mt-4 text-sm leading-7 ${descriptionClass}`}>
+                {project.description}
+              </p>
+
+              <div className="mt-5 flex flex-wrap gap-2">
+                {project.tech.map((tag) => (
+                  <span
+                    key={tag}
+                    className={`rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] ${tagClass}`}
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              {project.links.length > 0 && (
+                <div className="mt-6 flex flex-wrap gap-3">
+                  {project.links.map((link) => (
+                    <a
+                      key={link.href}
+                      href={link.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className={`inline-flex items-center rounded-full px-4 py-2 text-sm font-semibold ${linkClass}`}
+                    >
+                      {link.label}
+                    </a>
+                  ))}
+                </div>
+              )}
+            </article>
+          );
+        })}
       </div>
     </section>
   );

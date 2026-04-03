@@ -2,10 +2,77 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --paper: #f7efe3;
+  --paper-deep: #f0e4d4;
+  --surface: rgba(255, 255, 255, 0.76);
+  --surface-strong: #fffaf4;
+  --ink: #241d19;
+  --muted: #65564c;
+  --accent: #cd6a4d;
+  --accent-strong: #a84b32;
+  --teal: #1e7a74;
+  --gold: #e2ab55;
+  --line: rgba(114, 84, 63, 0.14);
+  --shadow: 0 24px 80px rgba(146, 104, 72, 0.16);
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  @apply bg-slate-950 text-slate-100;
+  margin: 0;
+  min-width: 320px;
+  background:
+    radial-gradient(circle at top left, rgba(230, 150, 124, 0.28), transparent 32%),
+    radial-gradient(circle at 85% 18%, rgba(99, 182, 175, 0.22), transparent 26%),
+    linear-gradient(180deg, #fffaf4 0%, var(--paper) 45%, var(--paper-deep) 100%);
+  color: var(--ink);
+  font-family: "Avenir Next", "Trebuchet MS", "Segoe UI", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: #1f1814;
+  font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", "Georgia", serif;
+  letter-spacing: -0.02em;
+}
+
+a,
+button,
+input,
+textarea {
+  transition:
+    color 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+main > section,
+main > div > section {
+  scroll-margin-top: 7rem;
+}
+
+::selection {
+  background: rgba(205, 106, 77, 0.22);
+}
+
+.floating-orb {
+  animation: drift 10s ease-in-out infinite;
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0, -14px, 0);
+  }
 }

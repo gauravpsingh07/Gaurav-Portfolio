@@ -137,7 +137,7 @@ function _LegacyExperience() {
   );
 }
 
-function Experience() {
+function _PreviousStyledExperience() {
   return (
     <section id="experience">
       <p className="text-sm font-medium uppercase tracking-[0.2em] text-indigo-400 mb-3">
@@ -280,6 +280,113 @@ function Experience() {
             </li>
           </ul>
         </article>
+      </div>
+    </section>
+  );
+}
+
+function Experience() {
+  const experiences = [
+    {
+      title: "Full Stack Developer",
+      company: "Saayam For All",
+      period: "Jan 2026 - Present | San Jose, CA",
+      summary:
+        "Building secure, production-ready backend features and APIs for a volunteer-focused platform, with hands-on work across file handling, validation, cloud storage, and persistence.",
+      bullets: [
+        "Built and tested 3 authenticated profile image APIs for upload, view, and delete flows using backend-managed Base64 handling, private AWS S3 storage, and secure database path mapping.",
+        "Enabled reliable, CORS-compatible profile photo management across 3 environments with safe overwrite and delete behavior and zero public S3 exposure.",
+        "Built an organization details API in the volunteer microservice with JWT-based user mapping, validation for 4 required fields, and reliable database persistence for frontend submission.",
+      ],
+    },
+    {
+      title: "Information Technology Technician",
+      company: "Oregon State University",
+      period: "May 2024 - Dec 2025 | Corvallis, OR, USA",
+      summary:
+        "Provided technical support, troubleshooting, and documentation for students, staff, and faculty in a fast-paced academic environment.",
+      bullets: [
+        "Helped diagnose and resolve hardware, software, and connectivity issues, improving user experience and reducing downtime.",
+        "Documented common issues and solutions to create repeatable troubleshooting steps and reduce repeated work.",
+        "Collaborated with senior staff to escalate complex technical problems and ensure timely resolution.",
+      ],
+    },
+    {
+      title: "Software Engineer",
+      company: "Mepro Tech",
+      period: "Apr 2022 - Aug 2023 | Mumbai, MH, India",
+      summary:
+        "Delivered scalable backend and platform improvements across API design, database performance, cloud deployment, and automated quality practices in an Agile engineering environment.",
+      bullets: [
+        "Led migration from a monolithic architecture to 4 independently deployable microservices, improving scalability by 30%.",
+        "Designed REST APIs supporting 5,000+ concurrent users with sub-500ms response times.",
+        "Optimized 5+ SQL queries and service-layer logic, reducing API response time by 30% and database latency by 80%.",
+        "Deployed services to AWS EC2, ensuring 99.9% uptime and seamless scalability across frontend and backend systems.",
+        "Implemented Jest unit testing to reach 85% coverage, reducing production bugs by 40% across the application lifecycle.",
+      ],
+    },
+    {
+      title: "Web Developer Intern",
+      company: "Wipro",
+      period: "Jun 2021 - Dec 2021 | Mumbai, MH, India",
+      summary:
+        "Contributed to full-stack web delivery by integrating backend APIs, rebuilding frontend flows in React, and improving release reliability through CI/CD enhancements.",
+      bullets: [
+        "Integrated a Python/Django REST API backend with a React frontend, enabling real-time data synchronization and improving application performance by 30%.",
+        "Reduced page load time from 6s to 3.6s by rebuilding the frontend with React and implementing code-splitting.",
+        "Enhanced CI/CD pipelines with GitHub Actions, reducing deployment failures and improving release stability.",
+      ],
+    },
+  ];
+
+  return (
+    <section
+      id="experience"
+      className="rounded-[2rem] border border-white/70 bg-white/72 p-6 shadow-[var(--shadow)] backdrop-blur-xl"
+    >
+      <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-[#a84b32]">
+        Experience
+      </p>
+      <h2 className="text-3xl font-semibold">Work That Shaped My Approach</h2>
+      <p className="mt-2 max-w-3xl text-sm leading-6 text-stone-600">
+        A blend of backend-heavy product work, cloud deployment, student-facing
+        support, and performance-focused full-stack engineering.
+      </p>
+
+      <div className="mt-8 space-y-6">
+        {experiences.map((role, index) => (
+          <article
+            key={`${role.company}-${role.title}`}
+            className="rounded-[2rem] border border-[#eadbcc] bg-white/82 p-6 shadow-[0_20px_50px_rgba(110,80,61,0.1)]"
+          >
+            <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+              <div className="flex items-start gap-4">
+                <span
+                  className={`mt-3 inline-flex h-3.5 w-3.5 rounded-full ${
+                    index % 2 === 0 ? "bg-[#cd6a4d]" : "bg-[#1e7a74]"
+                  }`}
+                />
+                <div>
+                  <h3 className="text-2xl font-semibold">
+                    {role.title} - {role.company}
+                  </h3>
+                  <p className="mt-3 max-w-3xl text-sm leading-7 text-stone-600">
+                    {role.summary}
+                  </p>
+                </div>
+              </div>
+              <p className="rounded-full bg-[#fff7ef] px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-stone-500">
+                {role.period}
+              </p>
+            </div>
+
+            <ul className="mt-6 list-disc space-y-2 pl-8 text-sm leading-7 text-stone-600 marker:text-[#cd6a4d]">
+              {role.bullets.map((bullet) => (
+                <li key={bullet}>{bullet}</li>
+              ))}
+            </ul>
+          </article>
+        ))}
       </div>
     </section>
   );
