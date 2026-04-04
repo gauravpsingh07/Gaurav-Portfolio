@@ -8,8 +8,8 @@ function _LegacyAbout() {
           </p>
 
           <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
-            Hi, I&apos;m <span className="text-indigo-400">Gaurav Pramod Singh</span>{" "}
-            —{" "}
+            Hi, I&apos;m{" "}
+            <span className="text-indigo-400">Gaurav Pramod Singh</span> —{" "}
             <span className="text-slate-300">
               <span className="text-indigo-400">Software Engineer</span> &{" "}
               <span className="text-indigo-400">Full Stack Developer</span>
@@ -96,8 +96,8 @@ function _PreviousStyledAbout() {
           </p>
 
           <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
-            Hi, I&apos;m <span className="text-indigo-400">Gaurav Pramod Singh</span>{" "}
-            -{" "}
+            Hi, I&apos;m{" "}
+            <span className="text-indigo-400">Gaurav Pramod Singh</span> -{" "}
             <span className="text-slate-300">
               <span className="text-indigo-400">Software Engineer</span> &{" "}
               <span className="text-indigo-400">Full Stack Developer</span>
@@ -118,9 +118,7 @@ function _PreviousStyledAbout() {
 
           <p className="text-slate-300 leading-relaxed mb-4">
             Most recently, I contributed at{" "}
-            <span className="text-indigo-400 font-medium">
-              Saayam For All
-            </span>{" "}
+            <span className="text-indigo-400 font-medium">Saayam For All</span>{" "}
             by building authenticated APIs and secure backend workflows for
             profile image management, cloud storage, validation, and reliable
             database persistence in a production-style environment.
@@ -190,9 +188,12 @@ function About() {
         </h1>
 
         <p className="mt-6 max-w-3xl text-base leading-8 text-stone-600">
-          I&apos;m <span className="font-semibold text-stone-900">Gaurav Pramod Singh</span>,
-          a full-stack software engineer with 2+ years of experience building
-          and deploying applications using React, TypeScript, Node.js,
+          I&apos;m{" "}
+          <span className="font-semibold text-stone-900">
+            Gaurav Pramod Singh
+          </span>
+          , a full-stack software engineer with 2+ years of experience building
+          and deploying scalable applications using React, TypeScript, Node.js,
           PostgreSQL, and AWS.
         </p>
 
@@ -205,10 +206,10 @@ function About() {
         </p>
 
         <p className="mt-4 max-w-3xl text-base leading-8 text-stone-600">
-          I&apos;m currently pursuing my Master of Engineering in Computer
-          Science at Oregon State University and looking for software
-          engineering opportunities where strong systems thinking and polished
-          product delivery both matter.
+          I recently graduated with a Master of Engineering in Computer Science
+          from Oregon State University and am looking for software engineering
+          opportunities where strong systems thinking and polished product
+          delivery both matter.
         </p>
 
         <div className="mt-8 flex flex-wrap gap-3">
