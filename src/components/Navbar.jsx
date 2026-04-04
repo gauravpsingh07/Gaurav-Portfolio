@@ -117,7 +117,23 @@ function Navbar() {
           ))}
         </div>
 
-        <div className="hidden lg:block">
+        <div className="hidden lg:flex items-center gap-2">
+          <a
+            href="https://github.com/gauravpsingh07"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center rounded-full border border-[#d9c7b7] bg-[#fff7ef] px-3 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-stone-600 hover:-translate-y-0.5 hover:border-[#1e7a74] hover:text-[#1e7a74]"
+          >
+            GitHub
+          </a>
+          <a
+            href="https://www.linkedin.com/in/gauravpramodsingh/"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center rounded-full border border-[#d9c7b7] bg-[#fff7ef] px-3 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-stone-600 hover:-translate-y-0.5 hover:border-[#1e7a74] hover:text-[#1e7a74]"
+          >
+            LinkedIn
+          </a>
           <a
             href="/assets/Resume.pdf"
             target="_blank"
@@ -150,14 +166,32 @@ function Navbar() {
                 {link.label}
               </a>
             ))}
-            <a
-              href="/assets/Resume.pdf"
-              target="_blank"
-              rel="noreferrer"
-              className="mt-2 inline-flex w-max items-center rounded-full bg-[#1e7a74] px-4 py-2 font-semibold text-white"
-            >
-              Resume
-            </a>
+            <div className="mt-2 flex flex-wrap gap-2">
+              <a
+                href="https://github.com/gauravpsingh07"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center rounded-full border border-[#d9c7b7] bg-[#fff7ef] px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-stone-600"
+              >
+                GitHub
+              </a>
+              <a
+                href="https://www.linkedin.com/in/gauravpramodsingh/"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center rounded-full border border-[#d9c7b7] bg-[#fff7ef] px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-stone-600"
+              >
+                LinkedIn
+              </a>
+              <a
+                href="/assets/Resume.pdf"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center rounded-full bg-[#1e7a74] px-4 py-2 font-semibold text-white"
+              >
+                Resume
+              </a>
+            </div>
           </div>
         </div>
       )}

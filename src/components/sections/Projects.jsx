@@ -116,6 +116,10 @@ function _PreviousStyledProjects() {
           label: "Live Demo",
           href: "https://stock-market-tracker-wheat.vercel.app/",
         },
+        {
+          label: "Repo",
+          href: "https://github.com/gauravpsingh07/StockMarketTracker",
+        },
       ],
     },
     {
@@ -127,6 +131,10 @@ function _PreviousStyledProjects() {
         {
           label: "Live Demo",
           href: "https://anime-manga-search.vercel.app/",
+        },
+        {
+          label: "Repo",
+          href: "https://github.com/gauravpsingh07/anime-manga-search",
         },
       ],
     },
@@ -236,6 +244,10 @@ function Projects() {
           label: "Live Demo",
           href: "https://stock-market-tracker-wheat.vercel.app/",
         },
+        {
+          label: "Repo",
+          href: "https://github.com/gauravpsingh07/StockMarketTracker",
+        },
       ],
     },
     {
@@ -247,6 +259,10 @@ function Projects() {
         {
           label: "Live Demo",
           href: "https://anime-manga-search.vercel.app/",
+        },
+        {
+          label: "Repo",
+          href: "https://github.com/gauravpsingh07/anime-manga-search",
         },
       ],
     },
