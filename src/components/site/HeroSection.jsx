@@ -42,14 +42,21 @@ function HeroSection() {
       </div>
 
       <div className="relative grid gap-10 lg:grid-cols-[1.12fr,0.88fr] lg:items-center">
-        <Stagger className="flex flex-col gap-6" delayChildren={0.12} staggerChildren={0.1}>
-          <Motion.div variants={fadeUp} className="tag-chip w-max">
+        <Stagger
+          className="min-w-0 flex flex-col gap-6"
+          delayChildren={0.12}
+          staggerChildren={0.1}
+        >
+          <Motion.div
+            variants={fadeUp}
+            className="tag-chip max-w-full self-start text-center text-[10px] leading-5 tracking-[0.2em] sm:w-max sm:text-left"
+          >
             Open to software engineering opportunities
           </Motion.div>
 
-          <Motion.div variants={fadeUp}>
+          <Motion.div variants={fadeUp} className="min-w-0">
             <p className="section-label">Gaurav Pramod Singh</p>
-            <h1 className="mt-4 max-w-4xl text-4xl font-semibold leading-[1.02] text-stone-900 sm:text-5xl lg:text-6xl">
+            <h1 className="mt-4 max-w-4xl break-words text-[clamp(2.25rem,9vw,4.75rem)] font-semibold leading-[1.02] text-stone-900">
               Building{" "}
               <span className="bg-gradient-to-r from-[#27485f] via-[#5572d8] to-[#cb8465] bg-clip-text text-transparent">
                 polished software products
@@ -96,21 +103,21 @@ function HeroSection() {
           </Motion.div>
         </Stagger>
 
-        <div className="grid gap-4">
+        <div className="grid min-w-0 gap-4">
           <Reveal className="glass-card overflow-hidden p-4 sm:p-5" delay={0.18}>
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(85,114,216,0.12),transparent_46%)]" />
             <div className="absolute inset-0 bg-[linear-gradient(145deg,rgba(255,255,255,0.3),transparent_34%,rgba(203,132,101,0.12))]" />
             <div className="relative">
-              <div className="mb-4 flex items-center justify-between">
-                <div>
+              <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                <div className="min-w-0">
                   <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#5572d8]">
                     Engineer Snapshot
                   </p>
-                  <h2 className="mt-2 text-2xl font-semibold text-stone-900">
+                  <h2 className="mt-2 max-w-[14ch] text-[clamp(1.95rem,7vw,2.6rem)] font-semibold leading-tight text-stone-900">
                     Full-stack delivery with strong backend instincts
                   </h2>
                 </div>
-                <span className="rounded-full border border-emerald-400/25 bg-emerald-400/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-emerald-300">
+                <span className="self-start rounded-full border border-emerald-400/25 bg-emerald-400/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-emerald-300">
                   Available
                 </span>
               </div>
@@ -131,7 +138,7 @@ function HeroSection() {
               <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-[#27485f]">
                 Current Focus
               </p>
-              <h3 className="mt-2 text-2xl font-semibold text-stone-900">
+              <h3 className="mt-2 break-words text-[clamp(1.95rem,7vw,2.55rem)] font-semibold leading-tight text-stone-900">
                 Shipping APIs, cloud-backed flows, and product-ready experiences
               </h3>
             </div>
