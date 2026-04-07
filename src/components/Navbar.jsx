@@ -1,14 +1,29 @@
-import { useState } from "react";
+/* eslint-disable */
+import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "framer-motion";
+import { useEffect, useState } from "react";
 
 const navLinks = [
   { href: "#about", label: "About" },
-  { href: "#skills", label: "Skills" },
   { href: "#projects", label: "Projects" },
-  { href: "#experience", label: "Work" },
+  { href: "#skills", label: "Skills" },
+  { href: "#experience", label: "Experience" },
   { href: "#education", label: "Education" },
-  { href: "#certifications", label: "Certifications" },
+  { href: "#certifications", label: "Credentials" },
   { href: "#contact", label: "Contact" },
 ];
+
+const profileLinks = [
+  {
+    href: "https://github.com/gauravpsingh07",
+    label: "GitHub",
+  },
+  {
+    href: "https://www.linkedin.com/in/gauravpramodsingh/",
+    label: "LinkedIn",
+  },
+];
+
+const resumeUrl = `${import.meta.env.BASE_URL}assets/Resume.pdf`;
 
 function LegacyNavbar() {
   const [open, setOpen] = useState(false);
