@@ -8,7 +8,7 @@ const educationItems = [
     degree: "Master of Engineering in Computer Science",
     school: "Oregon State University",
     period: "Sep 2023 - Dec 2025",
-    location: "Corvallis, OR",
+    location: "CORVALLIS, OR, USA",
     description:
       "Graduate work focused on algorithms, computer architecture, human-computer interaction, graphics, full-stack development, and data analysis.",
   },
@@ -16,7 +16,7 @@ const educationItems = [
     degree: "Bachelor's Degree in Computer Science",
     school: "Thakur College of Science and Commerce",
     period: "Jun 2019 - Apr 2022",
-    location: "Mumbai, India",
+    location: "MUMBAI, MH, INDIA",
     description:
       "Built a strong foundation in programming, data structures, algorithms, databases, operating systems, computer networks, Linux, and software engineering.",
   },
@@ -24,27 +24,20 @@ const educationItems = [
 
 function EducationSection() {
   return (
-    <MotionSection
-      id="education"
-      className="section-shell flex h-full flex-col px-6 py-8 sm:px-8 sm:py-10"
-    >
+    <MotionSection id="education" className="section-shell px-6 py-8 sm:px-8 sm:py-10 lg:px-10 lg:py-12">
       <SectionHeader
         eyebrow="Education"
         title="Academic grounding that strengthened both my systems thinking and product instincts."
         description="Formal training gave me the theory, but the most important outcome was learning how to connect technical depth with practical software delivery."
       />
 
-      <Stagger
-        className="mt-8 flex flex-1 flex-col gap-4"
-        delayChildren={0.05}
-        staggerChildren={0.08}
-      >
+      <Stagger className="mt-10 flex flex-col gap-5" delayChildren={0.05} staggerChildren={0.08}>
         {educationItems.map((item, index) => (
           <Motion.article
             key={item.degree}
             variants={fadeUp}
             whileHover={{ y: -4 }}
-            className="glass-card flex-1 overflow-hidden p-5 sm:p-6"
+            className="glass-card overflow-hidden p-5 sm:p-6 lg:p-7"
           >
             <div
               className={`absolute inset-0 bg-gradient-to-br ${
@@ -53,8 +46,8 @@ function EducationSection() {
                   : "from-[#e7def7]/44 via-transparent to-[#f1ddd4]/32"
               }`}
             />
-            <div className="relative flex h-full flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
-              <div>
+            <div className="relative flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
+              <div className="max-w-3xl">
                 <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-stone-500">
                   {item.period}
                 </p>

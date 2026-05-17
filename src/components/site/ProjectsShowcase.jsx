@@ -4,29 +4,101 @@ import { MotionSection, Reveal, Stagger } from "../ui/Reveal";
 import { fadeUp } from "../ui/motionVariants";
 
 const featuredProject = {
-  title: "FormFlow",
+  title: "SignalForge",
   eyebrow: "Featured Build",
   description:
-    "A full-stack form builder with JWT authentication, role-based access control, dynamic form creation, PostgreSQL + Prisma persistence, Redis caching, and rate limiting. Built with React and NestJS, then containerized for local Kubernetes deployment and API testing workflows.",
-  stack: ["React", "NestJS", "PostgreSQL", "Prisma", "Redis", "Docker", "Kubernetes"],
+    "An incident intelligence platform that detects error spikes and latency anomalies, groups failures into incidents, and generates AI-assisted summaries across a FastAPI and ClickHouse pipeline. Built to make noisy operational data easier to triage, understand, and act on.",
+  stack: ["SvelteKit", "TypeScript", "FastAPI", "Python", "ClickHouse", "Gemini API", "Redis", "Pytest"],
   highlights: [
-    "Role-based access and authenticated workflows",
-    "Dynamic form creation with persisted responses",
-    "Redis caching and rate limiting for resilient backend behavior",
+    "Incident grouping and anomaly detection for logs, latency, and error spikes",
+    "AI-generated incident summaries with timelines, causes, and action steps",
+    "Async ingestion, Redis-backed workflows, retries, rate limits, and alerts",
   ],
   links: [
     {
-      label: "Frontend Repo",
-      href: "https://github.com/gauravpsingh07/formflow-frontend",
+      label: "Live Demo",
+      href: "https://signalforge-orcin.vercel.app",
     },
     {
-      label: "Backend Repo",
-      href: "https://github.com/gauravpsingh07/formflow-backend",
+      label: "Repo",
+      href: "https://github.com/gauravpsingh07/signalforge",
     },
   ],
 };
 
 const supportingProjects = [
+  {
+    title: "FormFlow",
+    description:
+      "A JWT-secured form builder for creating, publishing, and analyzing dynamic forms across a full-stack React and NestJS architecture, backed by PostgreSQL, Prisma, Redis workflows, and containerized deployment.",
+    stack: ["React", "NestJS", "Node.js", "PostgreSQL", "Prisma", "Redis", "Docker", "Kubernetes"],
+    accent: "from-[#d7e4ff]/44 via-[#e2def8]/28 to-transparent",
+    preview: {
+      eyebrow: "Dynamic Forms",
+      stat: "JWT",
+      label: "Form creation, searchable submissions, analytics, and reliable async delivery",
+      bars: [52, 74, 66, 86, 70],
+    },
+    links: [
+      {
+        label: "Frontend Repo",
+        href: "https://github.com/gauravpsingh07/formflow-frontend",
+        primary: true,
+      },
+      {
+        label: "Backend Repo",
+        href: "https://github.com/gauravpsingh07/formflow-backend",
+      },
+    ],
+  },
+  {
+    title: "PulseOps",
+    description:
+      "A serverless uptime monitoring platform that checks API health, automates incident detection, and publishes status updates with latency history and check results across a Cloudflare-powered stack.",
+    stack: ["React", "TypeScript", "Cloudflare Workers", "Cloudflare D1", "Cron Triggers", "GitHub Actions"],
+    accent: "from-[#cfe2f8]/38 via-[#d7ecf4]/34 to-transparent",
+    preview: {
+      eyebrow: "Uptime Platform",
+      stat: "24/7",
+      label: "Automated health checks, incident states, and public status visibility",
+      bars: [54, 76, 68, 88, 72],
+    },
+    links: [
+      {
+        label: "Live Demo",
+        href: "https://pulseops-a0u.pages.dev",
+        primary: true,
+      },
+      {
+        label: "Repo",
+        href: "https://github.com/gauravpsingh07/pulseops",
+      },
+    ],
+  },
+  {
+    title: "CivicPulse",
+    description:
+      "A civic issue reporting platform with map-based submissions, Supabase-backed auth and storage, realtime updates, and admin workflows for moderation, analytics, and public visibility.",
+    stack: ["Next.js", "Supabase", "PostgreSQL", "Leaflet", "Recharts", "Vitest"],
+    accent: "from-[#d9eef0]/34 via-[#e5def4]/24 to-transparent",
+    preview: {
+      eyebrow: "Civic Reporting",
+      stat: "Live Map",
+      label: "Filtered issue maps, realtime status updates, and role-based workflows",
+      bars: [46, 60, 84, 70, 92],
+    },
+    links: [
+      {
+        label: "Live Demo",
+        href: "https://civic-pulse-sandy.vercel.app",
+        primary: true,
+      },
+      {
+        label: "Repo",
+        href: "https://github.com/gauravpsingh07/CivicPulse",
+      },
+    ],
+  },
   {
     title: "Stock Market Tracker",
     description:
@@ -42,7 +114,7 @@ const supportingProjects = [
     links: [
       {
         label: "Live Demo",
-        href: "https://stock-market-tracker-wheat.vercel.app/",
+        href: "https://stock-market-tracker-teal.vercel.app",
         primary: true,
       },
       {
@@ -133,8 +205,8 @@ function ProjectsShowcase() {
       <SectionHeader
         eyebrow="Projects"
         title="A product-style showcase of the systems and interfaces I build."
-        description="These projects highlight a mix of backend-heavy engineering, polished frontend execution, and the kind of product thinking I bring to full-stack software work."
-        action={<span className="tag-chip">Selected Builds</span>}
+        description="These projects show a mix of backend-heavy engineering, cloud systems, monitoring tools, civic workflows, and polished frontend execution across the kinds of products I like to build."
+        action={<span className="tag-chip">{supportingProjects.length + 1} Selected Builds</span>}
       />
 
       <div className="mt-8 grid gap-6">
@@ -199,7 +271,7 @@ function ProjectsShowcase() {
                       <span className="h-2.5 w-2.5 rounded-full bg-emerald-300/70" />
                     </div>
                     <span className="text-[11px] font-semibold uppercase tracking-[0.24em] text-stone-500">
-                      Form Builder Dashboard
+                      Incident Intelligence Console
                     </span>
                   </div>
 
@@ -208,22 +280,22 @@ function ProjectsShowcase() {
                       <div className="mb-4 flex items-center justify-between">
                         <div>
                           <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[#27485f]">
-                            Builder
+                            Detection
                           </p>
                           <h4 className="mt-2 text-xl font-semibold text-stone-900">
-                            Volunteer intake form
+                            Error spikes and latency anomalies
                           </h4>
                         </div>
                         <span className="rounded-full border border-emerald-400/20 bg-emerald-400/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.24em] text-emerald-300">
-                          Published
+                          Live
                         </span>
                       </div>
 
                       <div className="space-y-3">
                         {[
-                          "Personal details",
-                          "Availability preferences",
-                          "Skill and role selection",
+                          "Grouped failures into actionable incidents",
+                          "Generated AI summaries with causes and timelines",
+                          "Surfaced alerts, retries, and incident context",
                         ].map((item) => (
                           <div
                             key={item}
@@ -241,7 +313,7 @@ function ProjectsShowcase() {
                           Backend
                         </p>
                         <div className="mt-4 grid gap-3">
-                          {["JWT auth", "Prisma ORM", "Redis rate limit"].map((item) => (
+                          {["FastAPI services", "ClickHouse rollups", "Redis-backed workflows"].map((item) => (
                             <div
                               key={item}
                               className="rounded-[1rem] border border-[rgba(132,112,94,0.12)] bg-[#fbf7f1] px-4 py-3 text-sm text-stone-700"
@@ -257,7 +329,7 @@ function ProjectsShowcase() {
                           Delivery
                         </p>
                         <div className="mt-4 flex flex-wrap gap-2">
-                          {["Docker", "Kubernetes", "PostgreSQL", "NestJS"].map((item) => (
+                          {["SvelteKit", "Pytest", "Gemini API", "Alert pipelines"].map((item) => (
                             <span key={item} className="tag-chip">
                               {item}
                             </span>

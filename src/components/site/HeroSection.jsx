@@ -7,25 +7,25 @@ const profileImageUrl = `${import.meta.env.BASE_URL}assets/me.jpeg`;
 const highlights = [
   {
     label: "Education",
-    value: "M.Eng. Computer Science",
+    value: "M.Eng. in Computer Science",
   },
   {
     label: "Experience",
-    value: "2+ years across backend and full-stack delivery",
+    value: "Backend, platform, and full-stack delivery",
   },
   {
     label: "Focus",
-    value: "Full-stack products with a backend-first mindset",
+    value: "Secure user workflows, scalable REST APIs, and cloud-backed systems",
   },
   {
     label: "Core stack",
-    value: "React, TypeScript, Node.js, PostgreSQL, AWS",
+    value: "React, Next.js, Node.js, FastAPI, PostgreSQL, AWS",
   },
 ];
 
 const metrics = [
-  { value: "2+", label: "Years building production software" },
-  { value: "4", label: "Core focus areas across frontend, backend, cloud, data" },
+  { value: "Backend-first", label: "Scalable REST APIs, validation, and production-ready service design" },
+  { value: "Cloud-ready", label: "AWS integrations, deployment workflows, and resilient platform delivery" },
   { value: "M.Eng.", label: "Graduate-level systems and product training" },
 ];
 
@@ -33,7 +33,7 @@ function HeroSection() {
   return (
     <MotionSection
       id="about"
-      className="section-shell card-shimmer overflow-hidden px-6 py-8 sm:px-8 sm:py-10 lg:px-10 lg:py-12"
+      className="section-shell card-shimmer overflow-hidden px-6 pb-8 pt-5 sm:px-8 sm:pb-10 sm:pt-6 lg:px-10 lg:pb-12 lg:pt-7"
     >
       <div className="pointer-events-none absolute inset-0">
         <div className="beam-drift absolute left-[-12%] top-0 h-48 w-1/2 bg-[radial-gradient(circle,rgba(85,114,216,0.16),transparent_72%)] blur-3xl" />
@@ -41,9 +41,9 @@ function HeroSection() {
         <div className="ambient-orb-slow absolute bottom-[-6rem] left-[-4rem] h-64 w-64 rounded-full bg-[#b9d6dd]/24 blur-3xl" />
       </div>
 
-      <div className="relative grid gap-10 lg:grid-cols-[1.12fr,0.88fr] lg:items-center">
+      <div className="relative grid gap-8 lg:grid-cols-[1.12fr,0.88fr] lg:items-stretch">
         <Stagger
-          className="min-w-0 flex flex-col gap-6"
+          className="min-w-0 flex h-full flex-col gap-5"
           delayChildren={0.12}
           staggerChildren={0.1}
         >
@@ -55,8 +55,10 @@ function HeroSection() {
           </Motion.div>
 
           <Motion.div variants={fadeUp} className="min-w-0">
-            <p className="section-label">Gaurav Pramod Singh</p>
-            <h1 className="mt-4 max-w-4xl break-words text-[clamp(2.25rem,9vw,4.75rem)] font-semibold leading-[1.02] text-stone-900">
+            <p className="block text-[15px] font-semibold tracking-[0.16em] leading-none text-[#5572d8] sm:text-[16px]">
+              Gaurav Pramod Singh
+            </p>
+            <h1 className="mt-3 max-w-4xl break-words text-[clamp(2.25rem,9vw,4.75rem)] font-semibold leading-[1.02] text-stone-900">
               Building{" "}
               <span className="bg-gradient-to-r from-[#27485f] via-[#5572d8] to-[#cb8465] bg-clip-text text-transparent">
                 polished software products
@@ -66,18 +68,19 @@ function HeroSection() {
           </Motion.div>
 
           <Motion.p variants={fadeUp} className="max-w-3xl text-base leading-8 text-stone-600">
-            I am a full-stack software engineer focused on turning complex product
-            requirements into reliable APIs, thoughtful interfaces, and scalable
-            systems. My work spans modern React frontends, backend architecture,
-            cloud deployment, and performance-focused engineering.
+            I am a full-stack software engineer specializing in backend-heavy web
+            applications, scalable REST APIs, and cloud-based systems. I build
+            secure user workflows, database-backed services, and polished
+            interfaces with a strong focus on reliability, performance, and
+            maintainability.
           </Motion.p>
 
           <Motion.p variants={fadeUp} className="max-w-3xl text-sm leading-7 text-stone-500 sm:text-[15px]">
-            Most recently, I worked on secure backend workflows, authenticated API
-            delivery, cloud storage integrations, and resilient persistence layers.
-            I recently completed my Master of Engineering in Computer Science at
-            Oregon State University and am looking for roles where product quality
-            and engineering rigor both matter.
+            Recently I shipped Java REST services, AWS S3 integrations, JWT-mapped
+            onboarding flows, and production-ready monitoring features. I
+            completed my Master of Engineering in Computer Science at Oregon State
+            University and am looking for roles where backend rigor and product
+            quality both matter.
           </Motion.p>
 
           <Motion.div variants={fadeUp} className="flex flex-wrap gap-3">
@@ -89,13 +92,16 @@ function HeroSection() {
             </a>
           </Motion.div>
 
-          <Motion.div variants={fadeUp} className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+          <Motion.div variants={fadeUp} className="mt-auto grid min-h-0 flex-1 grid-rows-4 gap-3">
             {highlights.map((item) => (
-              <div key={item.label} className="stat-card">
+              <div
+                key={item.label}
+                className="stat-card flex h-full flex-col justify-center gap-3 p-4 sm:p-5"
+              >
                 <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-stone-500">
                   {item.label}
                 </p>
-                <p className="mt-3 text-sm font-medium leading-6 text-stone-800">
+                <p className="text-sm font-medium leading-6 text-stone-800">
                   {item.value}
                 </p>
               </div>
@@ -103,7 +109,7 @@ function HeroSection() {
           </Motion.div>
         </Stagger>
 
-        <div className="grid min-w-0 gap-4">
+        <div className="grid min-w-0 h-full gap-4">
           <Reveal className="glass-card overflow-hidden p-4 sm:p-5" delay={0.18}>
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(85,114,216,0.12),transparent_46%)]" />
             <div className="absolute inset-0 bg-[linear-gradient(145deg,rgba(255,255,255,0.3),transparent_34%,rgba(203,132,101,0.12))]" />
@@ -133,13 +139,14 @@ function HeroSection() {
             </div>
           </Reveal>
 
-          <Reveal className="glass-card p-5 sm:p-6" delay={0.26}>
-            <div>
+          <Reveal className="glass-card flex h-full flex-col p-5 sm:p-6" delay={0.26}>
+            <div className="flex flex-1 flex-col">
               <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-[#27485f]">
                 Current Focus
               </p>
               <h3 className="mt-2 break-words text-[clamp(1.95rem,7vw,2.55rem)] font-semibold leading-tight text-stone-900">
-                Shipping APIs, cloud-backed flows, and product-ready experiences
+                Shipping secure APIs, cloud-backed services, and product-ready
+                experiences
               </h3>
             </div>
 
@@ -149,11 +156,13 @@ function HeroSection() {
               thoughtful product polish from end to end.
             </p>
 
-            <div className="mt-6 grid gap-3 sm:grid-cols-3">
+            <div className="mt-6 grid auto-rows-fr gap-3 sm:grid-cols-3">
               {metrics.map((metric) => (
-                <div key={metric.label} className="stat-card">
-                  <p className="text-2xl font-semibold text-stone-900">{metric.value}</p>
-                  <p className="mt-2 text-xs uppercase tracking-[0.18em] text-stone-500">
+                <div key={metric.label} className="stat-card flex h-full flex-col gap-3 p-4 sm:p-5">
+                  <p className="text-[1.65rem] font-semibold leading-tight text-stone-900">
+                    {metric.value}
+                  </p>
+                  <p className="text-[12px] leading-5 text-stone-500">
                     {metric.label}
                   </p>
                 </div>

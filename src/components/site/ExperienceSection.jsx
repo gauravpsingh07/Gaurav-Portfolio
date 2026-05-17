@@ -8,20 +8,21 @@ const experiences = [
     title: "Full Stack Developer",
     company: "Saayam For All",
     period: "Jan 2026 - Present",
-    location: "San Jose, CA",
+    location: "SAN JOSE, CA, USA",
     summary:
-      "Building secure, production-ready backend features and APIs for a volunteer-focused platform, with hands-on work across file handling, validation, cloud storage, and persistence.",
+      "Building secure backend workflows and onboarding APIs for a volunteer-focused platform, with hands-on work across Java REST services, validation, AWS S3 storage, and cloud-backed user flows.",
     bullets: [
-      "Built and tested 3 authenticated profile image APIs for upload, view, and delete flows using backend-managed Base64 handling, private AWS S3 storage, and secure database path mapping.",
-      "Enabled reliable, CORS-compatible profile photo management across 3 environments with safe overwrite and delete behavior and zero public S3 exposure.",
-      "Built an organization details API in the volunteer microservice with JWT-based user mapping, validation for 4 required fields, and reliable database persistence for frontend submission.",
+      "Secured profile photos with Java REST APIs, AWS S3, and database path mapping, eliminating public S3 exposure.",
+      "Fixed profile image access issues by implementing CORS-safe Java REST upload and retrieval flows backed by AWS S3 storage.",
+      "Reduced onboarding errors with a JWT-mapped Java organization API, validation, and reliable database persistence.",
+      "Improved onboarding visibility by exposing wizard status APIs through AWS API Gateway and Java REST services.",
     ],
   },
   {
     title: "Information Technology Technician",
     company: "Oregon State University",
     period: "May 2024 - Dec 2025",
-    location: "Corvallis, OR",
+    location: "CORVALLIS, OR, USA",
     summary:
       "Provided technical support, troubleshooting, and documentation for students, staff, and faculty in a fast-paced academic environment.",
     bullets: [
@@ -33,29 +34,15 @@ const experiences = [
   {
     title: "Software Engineer",
     company: "Mepro Tech",
-    period: "Apr 2022 - Aug 2023",
-    location: "Mumbai, India",
+    period: "Apr 2022 - May 2023",
+    location: "MUMBAI, MH, INDIA",
     summary:
-      "Delivered scalable backend and platform improvements across API design, database performance, cloud deployment, and automated quality practices in an Agile engineering environment.",
+      "Delivered backend and platform improvements across Django REST APIs, caching, database performance, and AWS-hosted microservices in a production engineering environment.",
     bullets: [
-      "Led migration from a monolithic architecture to 4 independently deployable microservices, improving scalability by 30%.",
-      "Designed REST APIs supporting 5,000+ concurrent users with sub-500ms response times.",
-      "Optimized 5+ SQL queries and service-layer logic, reducing API response time by 30% and database latency by 80%.",
-      "Deployed services to AWS EC2, ensuring 99.9% uptime and seamless scalability across frontend and backend systems.",
-      "Implemented Jest unit testing to reach 85% coverage, reducing production bugs by 40% across the application lifecycle.",
-    ],
-  },
-  {
-    title: "Web Developer Intern",
-    company: "Wipro",
-    period: "Jun 2021 - Dec 2021",
-    location: "Mumbai, India",
-    summary:
-      "Contributed to full-stack web delivery by integrating backend APIs, rebuilding frontend flows in React, and improving release reliability through CI/CD enhancements.",
-    bullets: [
-      "Integrated a Python/Django REST API backend with a React frontend, enabling real-time data synchronization and improving application performance by 30%.",
-      "Reduced page load time from 6s to 3.6s by rebuilding the frontend with React and implementing code-splitting.",
-      "Enhanced CI/CD pipelines with GitHub Actions, reducing deployment failures and improving release stability.",
+      "Improved scalability by 30% by helping split a Django monolith into 4 Python microservices on AWS EC2.",
+      "Supported 5,000+ users with sub-500ms DRF APIs using Redis caching, Gunicorn, and Nginx.",
+      "Cut database latency by 80% by optimizing 15+ MySQL queries with indexing and connection pooling.",
+      "Maintained 99.9% uptime with AWS EC2, RDS, Load Balancer, CloudWatch, Nginx, and Gunicorn.",
     ],
   },
 ];
@@ -65,8 +52,8 @@ function ExperienceSection() {
     <MotionSection id="experience" className="section-shell px-6 py-8 sm:px-8 sm:py-10">
       <SectionHeader
         eyebrow="Experience"
-        title="A timeline of product, platform, and technical support work that shaped how I build."
-        description="My background blends backend implementation, systems troubleshooting, deployment work, and user-facing problem solving, which has made me deliberate about both reliability and clarity."
+        title="A timeline of backend, platform, and technical support work that shaped how I build."
+        description="From production APIs and cloud delivery to frontline troubleshooting and support, each role has made me more deliberate about reliability, maintainability, and clarity."
       />
 
       <Stagger className="relative mt-8 space-y-5" delayChildren={0.05} staggerChildren={0.08}>

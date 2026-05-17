@@ -7,7 +7,6 @@ const navLinks = [
   { href: "#skills", label: "Skills" },
   { href: "#experience", label: "Experience" },
   { href: "#education", label: "Education" },
-  { href: "#certifications", label: "Credentials" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -22,7 +21,7 @@ const profileLinks = [
   },
 ];
 
-const resumeUrl = `${import.meta.env.BASE_URL}assets/Resume.pdf`;
+const resumeUrl = `${import.meta.env.BASE_URL}assets/Resume.pdf?v=20260517`;
 
 function SiteNavbar() {
   const [open, setOpen] = useState(false);

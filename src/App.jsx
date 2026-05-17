@@ -3,7 +3,6 @@ import ProjectsShowcase from "./components/site/ProjectsShowcase";
 import SkillsSection from "./components/site/SkillsSection";
 import ExperienceSection from "./components/site/ExperienceSection";
 import EducationSection from "./components/site/EducationSection";
-import CertificationsSection from "./components/site/CertificationsSection";
 import ContactSection from "./components/site/ContactSection";
 import SiteFooter from "./components/site/SiteFooter";
 import SiteNavbar from "./components/site/SiteNavbar";
@@ -25,21 +24,13 @@ function App() {
 
       <div className="relative">
         <SiteNavbar />
-        <main className="mx-auto flex w-full max-w-7xl flex-col gap-10 px-4 pb-24 pt-8 sm:px-6 lg:px-8">
+        <main className="mx-auto flex w-full max-w-7xl flex-col gap-10 px-4 pb-24 pt-5 sm:px-6 sm:pt-6 lg:px-8">
           <HeroSection />
           <ProjectsShowcase />
-
-          <div className="grid gap-10 xl:grid-cols-[1.05fr,0.95fr]">
-            <SkillsSection />
-            <EducationSection />
-          </div>
-
           <ExperienceSection />
-
-          <div className="grid gap-10 xl:grid-cols-[0.82fr,1.18fr]">
-            <CertificationsSection />
-            <ContactSection />
-          </div>
+          <SkillsSection />
+          <EducationSection />
+          <ContactSection />
         </main>
 
         <SiteFooter />
