@@ -4,29 +4,69 @@ import { MotionSection, Reveal, Stagger } from "../ui/Reveal";
 import { fadeUp } from "../ui/motionVariants";
 
 const featuredProject = {
-  title: "SignalForge",
+  title: "Agent Canary",
   eyebrow: "Featured Build",
   description:
-    "An incident intelligence platform that detects error spikes and latency anomalies, groups failures into incidents, and generates AI-assisted summaries across a FastAPI and ClickHouse pipeline. Built to make noisy operational data easier to triage, understand, and act on.",
-  stack: ["SvelteKit", "TypeScript", "FastAPI", "Python", "ClickHouse", "Gemini API", "Redis", "Pytest"],
+    "A safety testing platform for AI agents that runs repeatable adversarial suites before agents are trusted with real tools or customer-facing work. It validates structured outputs, checks simulated tool calls, applies policy rules, scores safety dimensions, and stores full audit history across a FastAPI, LangGraph, and pgvector-backed system.",
+  stack: ["Next.js", "TypeScript", "FastAPI", "Python", "LangGraph", "PostgreSQL", "pgvector", "Pydantic", "Pytest"],
   highlights: [
-    "Incident grouping and anomaly detection for logs, latency, and error spikes",
-    "AI-generated incident summaries with timelines, causes, and action steps",
-    "Async ingestion, Redis-backed workflows, retries, rate limits, and alerts",
+    "Adversarial suites for prompt injection, unsafe tools, weak retrieval, and policy bypass",
+    "Policy engine, approval queue, scoring model, and complete audit history",
+    "RAG safety checks with ingestion, chunking, embeddings, and pgvector retrieval",
   ],
   links: [
     {
-      label: "Live Demo",
-      href: "https://signalforge-orcin.vercel.app",
-    },
-    {
       label: "Repo",
-      href: "https://github.com/gauravpsingh07/signalforge",
+      href: "https://github.com/gauravpsingh07/agent-canary",
     },
   ],
 };
 
 const supportingProjects = [
+  {
+    title: "AgentOps Firewall",
+    description:
+      "A policy, audit, and approval layer for AI agents that mediates risky actions before agents can send emails, delete files, call APIs, modify databases, deploy code, or run terminal commands.",
+    stack: ["Java 21", "Spring Boot", "Angular", "PostgreSQL", "Kafka", "RabbitMQ", "Docker", "Playwright"],
+    accent: "from-[#dbeafe]/42 via-[#e8f1f2]/30 to-transparent",
+    preview: {
+      eyebrow: "Agent Guardrails",
+      stat: "Policy",
+      label: "Approval workflows, audit logs, role-aware dashboards, and simulated risky actions",
+      bars: [64, 82, 58, 90, 76],
+    },
+    links: [
+      {
+        label: "Repo",
+        href: "https://github.com/gauravpsingh07/agentops-firewall",
+        primary: true,
+      },
+    ],
+  },
+  {
+    title: "SignalForge",
+    description:
+      "An incident intelligence platform that groups failures, detects latency and error anomalies, and generates AI-assisted incident summaries across a FastAPI + ClickHouse pipeline.",
+    stack: ["SvelteKit", "TypeScript", "FastAPI", "Python", "ClickHouse", "Gemini API", "Redis"],
+    accent: "from-[#efe0d8]/30 via-[#d9def9]/28 to-transparent",
+    preview: {
+      eyebrow: "Incident Intelligence",
+      stat: "AI Triage",
+      label: "Anomaly detection, async pipelines, and generated incident summaries",
+      bars: [50, 82, 66, 90, 74],
+    },
+    links: [
+      {
+        label: "Live Demo",
+        href: "https://signalforge-orcin.vercel.app",
+        primary: true,
+      },
+      {
+        label: "Repo",
+        href: "https://github.com/gauravpsingh07/signalforge",
+      },
+    ],
+  },
   {
     title: "FormFlow",
     description:
@@ -271,7 +311,7 @@ function ProjectsShowcase() {
                       <span className="h-2.5 w-2.5 rounded-full bg-emerald-300/70" />
                     </div>
                     <span className="text-[11px] font-semibold uppercase tracking-[0.24em] text-stone-500">
-                      Incident Intelligence Console
+                      Agent Safety Dashboard
                     </span>
                   </div>
 
@@ -280,10 +320,10 @@ function ProjectsShowcase() {
                       <div className="mb-4 flex items-center justify-between">
                         <div>
                           <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[#27485f]">
-                            Detection
+                            Evaluation
                           </p>
                           <h4 className="mt-2 text-xl font-semibold text-stone-900">
-                            Error spikes and latency anomalies
+                            Adversarial suites before real tool access
                           </h4>
                         </div>
                         <span className="rounded-full border border-emerald-400/20 bg-emerald-400/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.24em] text-emerald-300">
@@ -293,9 +333,9 @@ function ProjectsShowcase() {
 
                       <div className="space-y-3">
                         {[
-                          "Grouped failures into actionable incidents",
-                          "Generated AI summaries with causes and timelines",
-                          "Surfaced alerts, retries, and incident context",
+                          "Validated JSON contracts and simulated tool calls",
+                          "Scored safety, retrieval quality, and citation coverage",
+                          "Created review requests with audit evidence",
                         ].map((item) => (
                           <div
                             key={item}
@@ -313,7 +353,7 @@ function ProjectsShowcase() {
                           Backend
                         </p>
                         <div className="mt-4 grid gap-3">
-                          {["FastAPI services", "ClickHouse rollups", "Redis-backed workflows"].map((item) => (
+                          {["FastAPI API", "LangGraph workflow", "Postgres + pgvector"].map((item) => (
                             <div
                               key={item}
                               className="rounded-[1rem] border border-[rgba(132,112,94,0.12)] bg-[#fbf7f1] px-4 py-3 text-sm text-stone-700"
@@ -329,7 +369,7 @@ function ProjectsShowcase() {
                           Delivery
                         </p>
                         <div className="mt-4 flex flex-wrap gap-2">
-                          {["SvelteKit", "Pytest", "Gemini API", "Alert pipelines"].map((item) => (
+                          {["Next.js", "Pydantic", "Pytest", "Docker Compose"].map((item) => (
                             <span key={item} className="tag-chip">
                               {item}
                             </span>
