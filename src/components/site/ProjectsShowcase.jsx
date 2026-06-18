@@ -4,25 +4,45 @@ import { MotionSection, Reveal, Stagger } from "../ui/Reveal";
 import { fadeUp } from "../ui/motionVariants";
 
 const featuredProject = {
-  title: "Agent Canary",
+  title: "Helpdesk AI",
   eyebrow: "Featured Build",
   description:
-    "A safety testing platform for AI agents that runs repeatable adversarial suites before agents are trusted with real tools or customer-facing work. It validates structured outputs, checks simulated tool calls, applies policy rules, scores safety dimensions, and stores full audit history across a FastAPI, LangGraph, and pgvector-backed system.",
-  stack: ["Next.js", "TypeScript", "FastAPI", "Python", "LangGraph", "PostgreSQL", "pgvector", "Pydantic", "Pytest"],
+    "A multi-tenant AI customer-support platform where companies manage tickets, agents draft grounded replies from a tenant-specific knowledge base, and humans approve AI responses before they are sent. It combines RBAC, SSE ticket updates, PostgreSQL/pgvector RAG, Gemini, PII redaction, prompt-injection defenses, audit logs, and eval-gated CI.",
+  stack: ["Next.js", "React", "TypeScript", "PostgreSQL", "pgvector", "Prisma", "Auth.js", "Gemini API", "Playwright"],
   highlights: [
-    "Adversarial suites for prompt injection, unsafe tools, weak retrieval, and policy bypass",
-    "Policy engine, approval queue, scoring model, and complete audit history",
-    "RAG safety checks with ingestion, chunking, embeddings, and pgvector retrieval",
+    "Multi-tenant ticket workflows with auth, RBAC, SSE updates, and tenant isolation tests",
+    "Agentic RAG pipeline with citations, human approval, PII redaction, and prompt-injection defenses",
+    "Eval-gated CI, support metrics, audit history, cost caps, and production-style governance docs",
   ],
   links: [
     {
       label: "Repo",
-      href: "https://github.com/gauravpsingh07/agent-canary",
+      href: "https://github.com/gauravpsingh07/helpdesk-ai",
     },
   ],
 };
 
 const supportingProjects = [
+  {
+    title: "Agent Canary",
+    description:
+      "A safety testing platform for AI agents that runs adversarial suites, validates structured outputs and proposed tool calls, applies policy rules, scores safety dimensions, and stores full audit history.",
+    stack: ["Next.js", "TypeScript", "FastAPI", "Python", "LangGraph", "PostgreSQL", "pgvector", "Pydantic"],
+    accent: "from-[#d9eef0]/34 via-[#e5def4]/24 to-transparent",
+    preview: {
+      eyebrow: "AI Safety Testing",
+      stat: "Canary",
+      label: "Prompt-injection checks, policy scoring, approval queues, and RAG safety tests",
+      bars: [58, 80, 72, 88, 64],
+    },
+    links: [
+      {
+        label: "Repo",
+        href: "https://github.com/gauravpsingh07/agent-canary",
+        primary: true,
+      },
+    ],
+  },
   {
     title: "AgentOps Firewall",
     description:
@@ -311,7 +331,7 @@ function ProjectsShowcase() {
                       <span className="h-2.5 w-2.5 rounded-full bg-emerald-300/70" />
                     </div>
                     <span className="text-[11px] font-semibold uppercase tracking-[0.24em] text-stone-500">
-                      Agent Safety Dashboard
+                      AI Support Console
                     </span>
                   </div>
 
@@ -320,10 +340,10 @@ function ProjectsShowcase() {
                       <div className="mb-4 flex items-center justify-between">
                         <div>
                           <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[#27485f]">
-                            Evaluation
+                            Support Workflow
                           </p>
                           <h4 className="mt-2 text-xl font-semibold text-stone-900">
-                            Adversarial suites before real tool access
+                            Grounded AI replies with human approval
                           </h4>
                         </div>
                         <span className="rounded-full border border-emerald-400/20 bg-emerald-400/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.24em] text-emerald-300">
@@ -333,9 +353,9 @@ function ProjectsShowcase() {
 
                       <div className="space-y-3">
                         {[
-                          "Validated JSON contracts and simulated tool calls",
-                          "Scored safety, retrieval quality, and citation coverage",
-                          "Created review requests with audit evidence",
+                          "Tenant-isolated ticket queues and RBAC workflows",
+                          "Cited RAG drafts with approval before send",
+                          "PII redaction, audit logs, and eval-gated CI",
                         ].map((item) => (
                           <div
                             key={item}
@@ -353,7 +373,7 @@ function ProjectsShowcase() {
                           Backend
                         </p>
                         <div className="mt-4 grid gap-3">
-                          {["FastAPI API", "LangGraph workflow", "Postgres + pgvector"].map((item) => (
+                          {["Next.js server actions", "Postgres + pgvector", "Prisma tenant isolation"].map((item) => (
                             <div
                               key={item}
                               className="rounded-[1rem] border border-[rgba(132,112,94,0.12)] bg-[#fbf7f1] px-4 py-3 text-sm text-stone-700"
@@ -369,7 +389,7 @@ function ProjectsShowcase() {
                           Delivery
                         </p>
                         <div className="mt-4 flex flex-wrap gap-2">
-                          {["Next.js", "Pydantic", "Pytest", "Docker Compose"].map((item) => (
+                          {["Auth.js", "Gemini API", "Playwright", "GitHub Actions"].map((item) => (
                             <span key={item} className="tag-chip">
                               {item}
                             </span>

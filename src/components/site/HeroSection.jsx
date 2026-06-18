@@ -15,11 +15,11 @@ const highlights = [
   },
   {
     label: "Focus",
-    value: "Secure user workflows, scalable REST APIs, and cloud-backed systems",
+    value: "Full-stack, backend, and AI-enabled product engineering",
   },
   {
     label: "Core stack",
-    value: "React, Next.js, Node.js, FastAPI, PostgreSQL, AWS",
+    value: "TypeScript, Next.js, React, Java, Spring Boot, PostgreSQL, AWS",
   },
 ];
 
@@ -61,26 +61,24 @@ function HeroSection() {
             <h1 className="mt-3 max-w-4xl break-words text-[clamp(2.25rem,9vw,4.75rem)] font-semibold leading-[1.02] text-stone-900">
               Building{" "}
               <span className="bg-gradient-to-r from-[#27485f] via-[#5572d8] to-[#cb8465] bg-clip-text text-transparent">
-                polished software products
+                full-stack AI products
               </span>{" "}
               with backend depth, clean UX, and production-minded execution.
             </h1>
           </Motion.div>
 
           <Motion.p variants={fadeUp} className="max-w-3xl text-base leading-8 text-stone-600">
-            I am a full-stack software engineer specializing in backend-heavy web
-            applications, scalable REST APIs, and cloud-based systems. I build
-            secure user workflows, database-backed services, and polished
-            interfaces with a strong focus on reliability, performance, and
-            maintainability.
+            I am a software engineer and recent Master&apos;s graduate in Computer
+            Science from Oregon State University, focused on full-stack and
+            backend-heavy product engineering.
           </Motion.p>
 
           <Motion.p variants={fadeUp} className="max-w-3xl text-sm leading-7 text-stone-500 sm:text-[15px]">
-            Recently I shipped Java REST services, AWS S3 integrations, JWT-mapped
-            onboarding flows, and production-ready monitoring features. I
-            completed my Master of Engineering in Computer Science at Oregon State
-            University and am looking for roles where backend rigor and product
-            quality both matter.
+            I build web applications that combine clean user interfaces, secure
+            APIs, reliable data workflows, authentication, role-based access
+            control, testing, and production-style deployment practices. Recently,
+            I have been building projects around AI support systems, AI-agent
+            safety, observability, and cloud monitoring.
           </Motion.p>
 
           <Motion.div variants={fadeUp} className="flex flex-wrap gap-3">
@@ -145,15 +143,16 @@ function HeroSection() {
                 Current Focus
               </p>
               <h3 className="mt-2 break-words text-[clamp(1.95rem,7vw,2.55rem)] font-semibold leading-tight text-stone-900">
-                Shipping secure APIs, cloud-backed services, and product-ready
+                Shipping secure APIs, AI-enabled workflows, and product-ready
                 experiences
               </h3>
             </div>
 
             <p className="mt-4 text-sm leading-7 text-stone-600">
-              I like systems that feel dependable to both users and teammates:
-              clear interfaces, stable backend contracts, strong validation, and
-              thoughtful product polish from end to end.
+              I am currently looking for new-grad and early-career software
+              engineering roles where I can contribute to backend systems,
+              full-stack product development, AI-enabled applications, platform
+              engineering, and reliable cloud-based software.
             </p>
 
             <div className="mt-6 grid auto-rows-fr gap-3 sm:grid-cols-3">

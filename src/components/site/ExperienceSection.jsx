@@ -7,43 +7,34 @@ const experiences = [
   {
     title: "Full Stack Developer",
     company: "Saayam For All",
-    period: "Jan 2026 - Present",
-    location: "SAN JOSE, CA, USA",
-    summary:
-      "Building secure backend workflows and onboarding APIs for a volunteer-focused platform, with hands-on work across Java REST services, validation, AWS S3 storage, and cloud-backed user flows.",
-    bullets: [
-      "Secured profile photos with Java REST APIs, AWS S3, and database path mapping, eliminating public S3 exposure.",
-      "Fixed profile image access issues by implementing CORS-safe Java REST upload and retrieval flows backed by AWS S3 storage.",
-      "Reduced onboarding errors with a JWT-mapped Java organization API, validation, and reliable database persistence.",
-      "Improved onboarding visibility by exposing wizard status APIs through AWS API Gateway and Java REST services.",
-    ],
+    type: "Full-time",
+    period: "Mar 2026 - Present",
+    location: "SAN JOSE, CALIFORNIA, UNITED STATES",
+    mode: "Remote",
   },
   {
-    title: "Information Technology Technician",
+    title: "Software Engineering Assistant",
     company: "Oregon State University",
-    period: "May 2024 - Dec 2025",
-    location: "CORVALLIS, OR, USA",
-    summary:
-      "Provided technical support, troubleshooting, and documentation for students, staff, and faculty in a fast-paced academic environment.",
-    bullets: [
-      "Helped diagnose and resolve hardware, software, and connectivity issues, improving user experience and reducing downtime.",
-      "Documented common issues and solutions to create repeatable troubleshooting steps and reduce repeated work.",
-      "Collaborated with senior staff to escalate complex technical problems and ensure timely resolution.",
-    ],
+    type: "Part-time",
+    period: "Jan 2024 - Dec 2025",
+    location: "CORVALLIS, OREGON, UNITED STATES",
+    mode: "Hybrid",
   },
   {
-    title: "Software Engineer",
-    company: "Mepro Tech",
-    period: "Apr 2022 - May 2023",
-    location: "MUMBAI, MH, INDIA",
-    summary:
-      "Delivered backend and platform improvements across Django REST APIs, caching, database performance, and AWS-hosted microservices in a production engineering environment.",
-    bullets: [
-      "Improved scalability by 30% by helping split a Django monolith into 4 Python microservices on AWS EC2.",
-      "Supported 5,000+ users with sub-500ms DRF APIs using Redis caching, Gunicorn, and Nginx.",
-      "Cut database latency by 80% by optimizing 15+ MySQL queries with indexing and connection pooling.",
-      "Maintained 99.9% uptime with AWS EC2, RDS, Load Balancer, CloudWatch, Nginx, and Gunicorn.",
-    ],
+    title: "Software Engineer Intern",
+    company: "TechLuminix Private Limited",
+    type: "Internship",
+    period: "Jan 2023 - Aug 2023",
+    location: "MUMBAI, MAHARASHTRA, INDIA",
+    mode: "On-site",
+  },
+  {
+    title: "Software Engineer Intern",
+    company: "eSparkBiz",
+    type: "Internship",
+    period: "Mar 2022 - Dec 2022",
+    location: "AHMEDABAD, GUJARAT, INDIA",
+    mode: "Remote",
   },
 ];
 
@@ -52,8 +43,8 @@ function ExperienceSection() {
     <MotionSection id="experience" className="section-shell px-6 py-8 sm:px-8 sm:py-10">
       <SectionHeader
         eyebrow="Experience"
-        title="A timeline of backend, platform, and technical support work that shaped how I build."
-        description="From production APIs and cloud delivery to frontline troubleshooting and support, each role has made me more deliberate about reliability, maintainability, and clarity."
+        title="A concise timeline of the roles listed on my LinkedIn."
+        description="Current and past software engineering experience across full-stack development, university engineering support, and internship work."
       />
 
       <Stagger className="relative mt-8 space-y-5" delayChildren={0.05} staggerChildren={0.08}>
@@ -88,7 +79,7 @@ function ExperienceSection() {
                       {role.title}
                     </h3>
                     <p className="mt-1 text-sm font-medium text-[#5572d8]">
-                      {role.company}
+                      {role.company} - {role.type}
                     </p>
                   </div>
                   <span className="w-max rounded-full border border-[rgba(132,112,94,0.12)] bg-white/76 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-stone-500">
@@ -96,16 +87,7 @@ function ExperienceSection() {
                   </span>
                 </div>
 
-                <p className="mt-5 text-sm leading-7 text-stone-600">{role.summary}</p>
-
-                <ul className="mt-5 space-y-3 text-sm leading-7 text-stone-600">
-                  {role.bullets.map((bullet) => (
-                    <li key={bullet} className="grid grid-cols-[0.8rem,1fr] gap-3">
-                      <span className="mt-2.5 h-2 w-2 rounded-full bg-[#5572d8]" />
-                      <span>{bullet}</span>
-                    </li>
-                  ))}
-                </ul>
+                <p className="mt-5 text-sm font-medium text-stone-600">{role.mode}</p>
               </div>
             </Motion.div>
           </Motion.article>

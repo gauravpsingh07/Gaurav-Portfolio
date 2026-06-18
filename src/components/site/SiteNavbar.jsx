@@ -21,8 +21,6 @@ const profileLinks = [
   },
 ];
 
-const resumeUrl = `${import.meta.env.BASE_URL}assets/Resume.pdf?v=20260517`;
-
 function SiteNavbar() {
   const [open, setOpen] = useState(false);
   const [activeHref, setActiveHref] = useState("#about");
@@ -146,9 +144,6 @@ function SiteNavbar() {
               {link.label}
             </a>
           ))}
-          <a href={resumeUrl} target="_blank" rel="noreferrer" className="button-primary">
-            Resume
-          </a>
         </div>
 
         <button
@@ -204,9 +199,6 @@ function SiteNavbar() {
                   {link.label}
                 </a>
               ))}
-              <a href={resumeUrl} target="_blank" rel="noreferrer" className="button-primary">
-                Resume
-              </a>
             </div>
           </Motion.div>
         ) : null}

@@ -15,31 +15,31 @@ const skillGroups = [
   {
     title: "Frontend",
     description: "Modern UI tooling for fast iteration, strong state management, and polished interfaces.",
-    skills: ["React.js", "Next.js", "Angular", "Tailwind CSS", "Redux Toolkit", "Vite", "Recharts"],
+    skills: ["React.js", "Next.js", "Angular", "Tailwind CSS", "Redux Toolkit", "Vite", "Recharts", "SSE"],
     accent: "from-[#dce4f5]/42 to-transparent",
   },
   {
     title: "Backend",
     description: "Service design, authentication, validation, and API delivery across JavaScript and Python stacks.",
-    skills: ["Node.js", "Express.js", "Django REST Framework", "FastAPI", "Spring Boot", "Spring Security", "REST APIs", "JWT"],
+    skills: ["Node.js", "Express.js", "Django REST Framework", "FastAPI", "Spring Boot", "Spring Security", "REST APIs", "Auth.js", "RBAC", "JWT"],
     accent: "from-[#e7def7]/44 to-transparent",
   },
   {
     title: "Database",
     description: "Structured persistence, caching, and practical data modeling across product and platform builds.",
-    skills: ["PostgreSQL", "pgvector", "MySQL", "MongoDB", "Redis", "Prisma", "ClickHouse", "SQLAlchemy"],
+    skills: ["PostgreSQL", "pgvector", "MySQL", "MongoDB", "Redis", "Prisma", "ClickHouse", "SQLAlchemy", "Hybrid RAG"],
     accent: "from-[#f1ddd4]/46 to-transparent",
   },
   {
     title: "Cloud & DevOps",
     description: "Deployment, automation, observability, and cloud delivery workflows for production systems.",
-    skills: ["AWS", "Docker", "Docker Compose", "Kubernetes", "Nginx", "Gunicorn", "Kafka", "RabbitMQ", "GitHub Actions", "CI/CD"],
+    skills: ["AWS", "Docker", "Docker Compose", "Kubernetes", "Nginx", "Gunicorn", "Kafka", "RabbitMQ", "GitHub Actions", "CI/CD", "Eval-gated CI"],
     accent: "from-[#d9eef0]/34 to-transparent",
   },
   {
     title: "Testing & Tools",
     description: "Testing, API workflows, schema validation, and engineering tools I use day to day.",
-    skills: ["Jest", "Pytest", "Vitest", "Playwright", "JUnit 5", "Mockito", "Zod", "Pydantic", "JSON Schema", "LangGraph", "Swagger/OpenAPI", "Gemini API"],
+    skills: ["Jest", "Pytest", "Vitest", "Playwright", "JUnit 5", "Mockito", "Zod", "Pydantic", "JSON Schema", "LangGraph", "Swagger/OpenAPI", "Gemini API", "PII Redaction"],
     accent: "from-[#efe0d8]/30 via-[#d9def9]/28 to-transparent",
   },
 ];
