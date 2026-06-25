@@ -23,7 +23,7 @@ const experiences = [
   {
     title: "Software Engineer",
     company: "TechLuminix Private Limited",
-    type: "Internship",
+    type: "Full-time",
     period: "Jun 2022 - Jul 2023",
     location: "MUMBAI, MAHARASHTRA, INDIA",
     mode: "On-site",
