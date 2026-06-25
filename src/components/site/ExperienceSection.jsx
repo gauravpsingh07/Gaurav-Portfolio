@@ -21,20 +21,12 @@ const experiences = [
     mode: "Hybrid",
   },
   {
-    title: "Software Engineer Intern",
+    title: "Software Engineer",
     company: "TechLuminix Private Limited",
     type: "Internship",
-    period: "Jan 2023 - Aug 2023",
+    period: "Jun 2022 - Jul 2023",
     location: "MUMBAI, MAHARASHTRA, INDIA",
     mode: "On-site",
-  },
-  {
-    title: "Software Engineer Intern",
-    company: "eSparkBiz",
-    type: "Internship",
-    period: "Mar 2022 - Dec 2022",
-    location: "AHMEDABAD, GUJARAT, INDIA",
-    mode: "Remote",
   },
 ];
 

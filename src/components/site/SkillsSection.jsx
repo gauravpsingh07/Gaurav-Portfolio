@@ -49,7 +49,7 @@ function SkillsSection() {
     <MotionSection id="skills" className="section-shell px-6 py-8 sm:px-8 sm:py-10 lg:px-10 lg:py-12">
       <SectionHeader
         eyebrow="Skills"
-        title="A resume-aligned toolkit for building product-grade interfaces and dependable systems."
+        title="A practical toolkit for building product-grade interfaces and dependable systems."
         description="My stack spans frontend delivery, backend services, data systems, cloud deployment, and the testing workflows that keep production software stable."
         action={<span className="tag-chip">Full-stack + Backend Focus</span>}
       />
