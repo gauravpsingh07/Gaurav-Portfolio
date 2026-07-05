@@ -3,7 +3,28 @@ import SectionHeader from "../ui/SectionHeader";
 import { MotionSection, Stagger } from "../ui/Reveal";
 import { fadeUp } from "../ui/motionVariants";
 
-const certificateUrl = `${import.meta.env.BASE_URL}assets/documents/PowerBiCertificate.pdf`;
+const credentials = [
+  {
+    title: "AWS Certified Cloud Practitioner",
+    issuer: "Amazon Web Services (AWS)",
+    period: "Issued Jun 2026 - Expires Jun 2029",
+    description:
+      "Validated foundational AWS cloud knowledge across core services, security, architecture, pricing, and operational concepts.",
+    link: "https://www.credly.com/badges/4b5ff172-ae3a-459d-a818-4b96ccfa4027",
+    action: "View Credential",
+    tags: ["AWS", "Cloud Foundations", "Cloud Security"],
+  },
+  {
+    title: "Microsoft Power BI Certification",
+    issuer: "Supplementary Credential",
+    period: "Completed Mar 2023",
+    description:
+      "Built practical familiarity with reporting workflows, dashboards, visualization, and business intelligence concepts.",
+    link: `${import.meta.env.BASE_URL}assets/documents/PowerBiCertificate.pdf`,
+    action: "View Certificate",
+    tags: ["Reporting", "Dashboards", "Business Intelligence"],
+  },
+];
 
 const skillGroups = [
   {
@@ -102,33 +123,52 @@ function SkillsSection() {
         >
           <div className="absolute inset-0 bg-[linear-gradient(145deg,rgba(85,114,216,0.1),transparent_40%,rgba(255,255,255,0.34))]" />
           <div className="relative flex flex-col gap-6">
-            <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
-              <div className="max-w-3xl">
-                <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-stone-500">
-                  Completed Mar 2023
-                </p>
-                <h3 className="mt-3 text-2xl font-semibold text-stone-900">
-                  Microsoft Power BI Certification
-                </h3>
-                <p className="mt-4 text-sm leading-7 text-stone-600">
-                  Built practical familiarity with reporting workflows, dashboards,
-                  visualization, and business intelligence concepts.
-                </p>
-              </div>
-
-              <a href={certificateUrl} target="_blank" rel="noreferrer" className="button-primary">
-                View Certificate
-              </a>
+            <div>
+              <p className="section-label">Credentials</p>
+              <h3 className="mt-3 text-2xl font-semibold text-stone-900">
+                Certifications that support my cloud, data, and product engineering work.
+              </h3>
             </div>
 
-            <div className="grid gap-3 sm:grid-cols-3">
-              {["Reporting", "Dashboards", "Business Intelligence"].map((item) => (
+            <div className="grid gap-5 lg:grid-cols-2">
+              {credentials.map((credential) => (
                 <Motion.div
-                  key={item}
+                  key={credential.title}
                   whileHover={{ y: -4 }}
-                  className="stat-card text-center text-sm font-medium text-stone-700"
+                  className="stat-card flex h-full flex-col gap-5 p-5 sm:p-6"
                 >
-                  {item}
+                  <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                    <div>
+                      <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-stone-500">
+                        {credential.period}
+                      </p>
+                      <h4 className="mt-3 text-2xl font-semibold leading-tight text-stone-900">
+                        {credential.title}
+                      </h4>
+                      <p className="mt-2 text-sm font-medium text-[#5572d8]">
+                        {credential.issuer}
+                      </p>
+                    </div>
+
+                    <a
+                      href={credential.link}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="button-primary shrink-0"
+                    >
+                      {credential.action}
+                    </a>
+                  </div>
+
+                  <p className="text-sm leading-7 text-stone-600">{credential.description}</p>
+
+                  <div className="mt-auto flex flex-wrap gap-2">
+                    {credential.tags.map((tag) => (
+                      <span key={tag} className="tag-chip">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </Motion.div>
               ))}
             </div>
