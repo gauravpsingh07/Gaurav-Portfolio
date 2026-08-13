@@ -2,7 +2,7 @@ import { motion as Motion, useReducedMotion } from "framer-motion";
 import { fadeUp, staggerContainer } from "./motionVariants";
 
 const baseTransition = {
-  duration: 0.7,
+  duration: 0.5,
   ease: [0.22, 1, 0.36, 1],
 };
 
@@ -10,7 +10,7 @@ export function Reveal({
   children,
   className = "",
   delay = 0,
-  y = 28,
+  y = 16,
   once = true,
 }) {
   const reduceMotion = useReducedMotion();
@@ -72,17 +72,23 @@ export function MotionSection({ children, className = "", id }) {
 export function Stagger({
   children,
   className = "",
-  delayChildren = 0.08,
-  staggerChildren: staggerAmount = 0.08,
+  delayChildren = 0.04,
+  staggerChildren: staggerAmount = 0.06,
   once = true,
 }) {
+  const reduceMotion = useReducedMotion();
+
   return (
     <Motion.div
       className={className}
       initial="hidden"
       whileInView="show"
       viewport={{ once, amount: 0.2 }}
-      variants={staggerContainer(delayChildren, staggerAmount)}
+      variants={
+        reduceMotion
+          ? { hidden: {}, show: {} }
+          : staggerContainer(delayChildren, staggerAmount)
+      }
     >
       {children}
     </Motion.div>
