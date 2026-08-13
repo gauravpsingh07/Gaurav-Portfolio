@@ -1,4 +1,10 @@
-import { AnimatePresence, motion as Motion } from "framer-motion";
+import {
+  AnimatePresence,
+  motion as Motion,
+  useReducedMotion,
+  useScroll,
+  useSpring,
+} from "framer-motion";
 import { useEffect, useState } from "react";
 import { profile } from "../../data/portfolio";
 
@@ -17,6 +23,13 @@ const externalLinks = [
 function SiteNavbar() {
   const [open, setOpen] = useState(false);
   const [activeHref, setActiveHref] = useState("");
+  const reduceMotion = useReducedMotion();
+  const { scrollYProgress } = useScroll();
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 140,
+    damping: 28,
+    mass: 0.25,
+  });
 
   useEffect(() => {
     const sections = navLinks
@@ -66,6 +79,11 @@ function SiteNavbar() {
 
   return (
     <header className="site-header">
+      <Motion.div
+        className="scroll-progress"
+        style={{ scaleX: reduceMotion ? scrollYProgress : smoothProgress }}
+        aria-hidden="true"
+      />
       <nav className="site-container nav-shell" aria-label="Primary navigation">
         <a href="#top" className="brand-link" onClick={closeMenu}>
           <span className="brand-mark" aria-hidden="true">

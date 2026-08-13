@@ -1,7 +1,10 @@
-import { motion as Motion } from "framer-motion";
+import { motion as Motion, useReducedMotion } from "framer-motion";
 import { profile } from "../../data/portfolio";
 import { MotionSection, Stagger } from "../ui/Reveal";
-import { fadeUp } from "../ui/motionVariants";
+import { fadeUp, staggerContainer } from "../ui/motionVariants";
+
+const heroTitle = "I build backend systems, full-stack products, and AI-enabled applications.";
+const heroWords = heroTitle.split(" ");
 
 const summaryItems = [
   {
@@ -19,6 +22,8 @@ const summaryItems = [
 ];
 
 function HeroSection() {
+  const reduceMotion = useReducedMotion();
+
   return (
     <MotionSection id="top" className="hero-section">
       <div className="site-container">
@@ -29,8 +34,21 @@ function HeroSection() {
               <p className="hero-role">Software Engineer</p>
             </Motion.div>
 
-            <Motion.h1 variants={fadeUp} className="hero-title">
-              I build backend systems, full-stack products, and AI-enabled applications.
+            <Motion.h1
+              variants={staggerContainer(0.08, 0.045)}
+              className="hero-title"
+              aria-label={heroTitle}
+            >
+              {heroWords.map((word, index) => (
+                <Motion.span
+                  key={`${word}-${index}`}
+                  variants={fadeUp}
+                  className="hero-title-word"
+                  aria-hidden="true"
+                >
+                  {word}
+                </Motion.span>
+              ))}
             </Motion.h1>
 
             <Motion.p variants={fadeUp} className="hero-intro">
@@ -54,9 +72,17 @@ function HeroSection() {
           </Stagger>
 
           <Motion.figure
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
+            initial={
+              reduceMotion
+                ? false
+                : { opacity: 0, clipPath: "inset(0 0 12% 0)", y: 12 }
+            }
+            animate={
+              reduceMotion
+                ? undefined
+                : { opacity: 1, clipPath: "inset(0 0 0% 0)", y: 0 }
+            }
+            transition={{ duration: 0.65, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
             className="portrait-wrap"
           >
             <img

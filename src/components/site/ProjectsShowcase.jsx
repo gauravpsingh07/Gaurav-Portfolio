@@ -1,4 +1,4 @@
-import { motion as Motion } from "framer-motion";
+import { motion as Motion, useReducedMotion } from "framer-motion";
 import { additionalProjects, featuredProjects } from "../../data/portfolio";
 import SectionHeader from "../ui/SectionHeader";
 import { MotionSection, Reveal, Stagger } from "../ui/Reveal";
@@ -18,6 +18,22 @@ function ProjectLinks({ links }) {
 
 function FeaturedProject({ project, index }) {
   const imageFirst = index % 2 === 1;
+  const reduceMotion = useReducedMotion();
+  const imageReveal = reduceMotion
+    ? undefined
+    : {
+        hidden: {
+          opacity: 0,
+          clipPath: imageFirst ? "inset(0 0 0 10%)" : "inset(0 10% 0 0)",
+          x: imageFirst ? -14 : 14,
+        },
+        show: {
+          opacity: 1,
+          clipPath: "inset(0 0 0 0)",
+          x: 0,
+          transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] },
+        },
+      };
 
   return (
     <Motion.article variants={fadeUp} className="featured-project">
@@ -49,12 +65,15 @@ function FeaturedProject({ project, index }) {
         <ProjectLinks links={project.links} />
       </div>
 
-      <a
+      <Motion.a
         href={project.links[0].href}
         target="_blank"
         rel="noreferrer"
         className={`project-image-link ${imageFirst ? "lg:order-1" : ""}`}
         aria-label={`Open ${project.title}`}
+        variants={imageReveal}
+        whileHover={reduceMotion ? undefined : { y: -4 }}
+        transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
       >
         <img
           src={project.image}
@@ -63,7 +82,13 @@ function FeaturedProject({ project, index }) {
           decoding="async"
           className={project.imagePosition}
         />
-      </a>
+        <span className="project-image-action" aria-hidden="true">
+          View project
+          <svg viewBox="0 0 16 16" focusable="false">
+            <path d="M4 12 12 4M6 4h6v6" />
+          </svg>
+        </span>
+      </Motion.a>
     </Motion.article>
   );
 }

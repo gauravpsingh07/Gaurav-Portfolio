@@ -249,6 +249,17 @@ ul {
   backdrop-filter: blur(12px);
 }
 
+.scroll-progress {
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  z-index: 2;
+  height: 2px;
+  transform-origin: left;
+  background: var(--accent);
+}
+
 .nav-shell {
   display: flex;
   min-height: 4.5rem;
@@ -416,6 +427,11 @@ ul {
   font-weight: 600;
   letter-spacing: -0.06em;
   line-height: 1.035;
+}
+
+.hero-title-word {
+  display: inline-block;
+  margin-right: 0.22em;
 }
 
 .hero-intro {
@@ -608,6 +624,7 @@ ul {
 }
 
 .project-image-link {
+  position: relative;
   display: block;
   min-width: 0;
   overflow: hidden;
@@ -615,17 +632,60 @@ ul {
   border: 1px solid var(--line-strong);
   border-radius: 0.7rem;
   background: #eef0f3;
+  box-shadow: 0 0 0 rgba(24, 24, 27, 0);
+  transition: border-color 220ms ease, box-shadow 220ms ease;
 }
 
 .project-image-link img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 240ms ease;
+  transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.project-image-link:hover img {
-  transform: scale(1.012);
+.project-image-link:hover,
+.project-image-link:focus-visible {
+  border-color: #aeb4c0;
+  box-shadow: 0 0.9rem 2.25rem rgba(24, 24, 27, 0.1);
+}
+
+.project-image-link:hover img,
+.project-image-link:focus-visible img {
+  transform: scale(1.018);
+}
+
+.project-image-action {
+  position: absolute;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  transform: translateY(0.35rem);
+  border-radius: 0.4rem;
+  background: rgba(24, 24, 27, 0.9);
+  padding: 0.6rem 0.75rem;
+  color: white;
+  font-size: 0.72rem;
+  font-weight: 700;
+  opacity: 0;
+  transition: opacity 180ms ease, transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.project-image-action svg {
+  width: 0.85rem;
+  height: 0.85rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.5;
+}
+
+.project-image-link:hover .project-image-action,
+.project-image-link:focus-visible .project-image-action {
+  transform: translateY(0);
+  opacity: 1;
 }
 
 .additional-projects {
@@ -682,16 +742,48 @@ ul {
 
 /* Experience */
 .experience-list {
+  position: relative;
   margin-top: 4rem;
   border-top: 1px solid var(--line-strong);
 }
 
+.experience-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc(11.5rem + clamp(1rem, 2.5vw, 2.5rem));
+  z-index: 1;
+  width: 1px;
+  transform-origin: top;
+  background: rgba(36, 87, 214, 0.38);
+}
+
 .experience-item {
+  position: relative;
   display: grid;
   grid-template-columns: 11.5rem minmax(0, 1fr);
   gap: clamp(2rem, 5vw, 5rem);
   border-bottom: 1px solid var(--line);
   padding-block: 2.5rem;
+}
+
+.experience-item::before {
+  content: "";
+  position: absolute;
+  top: 2.85rem;
+  left: calc(11.5rem + clamp(1rem, 2.5vw, 2.5rem) - 0.3rem);
+  z-index: 2;
+  width: 0.6rem;
+  height: 0.6rem;
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  background: var(--surface-muted);
+  transition: transform 180ms ease, background-color 180ms ease;
+}
+
+.experience-item:hover::before {
+  transform: scale(1.35);
+  background: var(--accent-soft);
 }
 
 .experience-period p {
@@ -740,8 +832,11 @@ ul {
 }
 
 .skill-group {
+  position: relative;
+  z-index: 0;
   min-width: 0;
   padding: 1.8rem 1.4rem 2rem;
+  transition: background-color 200ms ease, box-shadow 200ms ease;
 }
 
 .skill-group + .skill-group {
@@ -751,6 +846,7 @@ ul {
 .skill-group h3 {
   font-size: 1rem;
   font-weight: 700;
+  transition: color 180ms ease;
 }
 
 .skill-group ul {
@@ -766,6 +862,18 @@ ul {
 
 .skill-group li + li {
   margin-top: 0.45rem;
+}
+
+@media (hover: hover) {
+  .skill-group:hover {
+    z-index: 1;
+    background: var(--surface-blue);
+    box-shadow: 0 1rem 2.25rem rgba(24, 24, 27, 0.08);
+  }
+
+  .skill-group:hover h3 {
+    color: var(--accent);
+  }
 }
 
 /* Education and certifications */
@@ -1127,6 +1235,19 @@ textarea.field-input {
   .experience-item {
     grid-template-columns: 1fr;
     gap: 1.25rem;
+  }
+
+  .experience-list {
+    padding-left: 1.5rem;
+  }
+
+  .experience-line {
+    left: 0.25rem;
+  }
+
+  .experience-item::before {
+    top: 2.85rem;
+    left: -1.55rem;
   }
 
   .experience-period {

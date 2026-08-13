@@ -15,12 +15,7 @@ export function Reveal({
 }) {
   const reduceMotion = useReducedMotion();
 
-  const variants = reduceMotion
-    ? {
-        hidden: { opacity: 1, y: 0 },
-        show: { opacity: 1, y: 0 },
-      }
-    : {
+  const variants = {
         hidden: { opacity: 0, y },
         show: {
           opacity: 1,
@@ -34,10 +29,10 @@ export function Reveal({
 
   return (
     <Motion.div
-      initial="hidden"
-      whileInView="show"
+      initial={reduceMotion ? false : "hidden"}
+      whileInView={reduceMotion ? undefined : "show"}
       viewport={{ once, amount: 0.2 }}
-      variants={variants}
+      variants={reduceMotion ? undefined : variants}
       className={className}
     >
       {children}
@@ -52,17 +47,10 @@ export function MotionSection({ children, className = "", id }) {
     <Motion.section
       id={id}
       className={className}
-      initial="hidden"
-      whileInView="show"
+      initial={reduceMotion ? false : "hidden"}
+      whileInView={reduceMotion ? undefined : "show"}
       viewport={{ once: true, amount: 0.12 }}
-      variants={
-        reduceMotion
-          ? {
-              hidden: { opacity: 1, y: 0 },
-              show: { opacity: 1, y: 0 },
-            }
-          : fadeUp
-      }
+      variants={reduceMotion ? undefined : fadeUp}
     >
       {children}
     </Motion.section>
@@ -81,13 +69,11 @@ export function Stagger({
   return (
     <Motion.div
       className={className}
-      initial="hidden"
-      whileInView="show"
+      initial={reduceMotion ? false : "hidden"}
+      whileInView={reduceMotion ? undefined : "show"}
       viewport={{ once, amount: 0.2 }}
       variants={
-        reduceMotion
-          ? { hidden: {}, show: {} }
-          : staggerContainer(delayChildren, staggerAmount)
+        reduceMotion ? undefined : staggerContainer(delayChildren, staggerAmount)
       }
     >
       {children}

@@ -1,4 +1,6 @@
-import { Reveal } from "./Reveal";
+import { motion as Motion } from "framer-motion";
+import { Stagger } from "./Reveal";
+import { fadeUp } from "./motionVariants";
 
 function SectionHeader({
   eyebrow,
@@ -7,16 +9,16 @@ function SectionHeader({
   action,
 }) {
   return (
-    <Reveal>
-      <div className="section-heading">
+    <Stagger className="section-heading" delayChildren={0.02} staggerChildren={0.07}>
         <div>
-          <p className="eyebrow">{eyebrow}</p>
-          <h2 className="section-title">{title}</h2>
-          {description ? <p className="section-copy">{description}</p> : null}
+          <Motion.p variants={fadeUp} className="eyebrow">{eyebrow}</Motion.p>
+          <Motion.h2 variants={fadeUp} className="section-title">{title}</Motion.h2>
+          {description ? (
+            <Motion.p variants={fadeUp} className="section-copy">{description}</Motion.p>
+          ) : null}
         </div>
-        {action ? <div className="section-action">{action}</div> : null}
-      </div>
-    </Reveal>
+        {action ? <Motion.div variants={fadeUp} className="section-action">{action}</Motion.div> : null}
+    </Stagger>
   );
 }
 
